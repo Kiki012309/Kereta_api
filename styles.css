@@ -1,0 +1,132 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
+    padding: 20px;
+    justify-content: center; /* Menyusun konten secara vertikal di tengah */
+}
+
+.train-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.train {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara gerbong-gerbong */
+    flex-direction: row; /* Menyusun gerbong dari kiri ke kanan */
+    position: relative; /* Untuk mengatur garis penghubung */
+}
+
+.train::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100px; /* Menyelaraskan dengan lebar engine */
+    height: 4px; /* Ketebalan garis */
+    background-color: #000; /* Warna garis penghubung */
+    width: calc(100% - 100px); /* Lebar garis penghubung dari engine ke ujung kereta */
+}
+
+.engine {
+    width: 100px;
+    height: 60px;
+    background-color: #8B0000;
+    border: 4px solid black;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.engine::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #8B0000;
+    border: 4px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.carriage {
+    width: 80px;
+    height: 60px;
+    background-color: #B22222;
+    border: 4px solid black;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carriage::before,
+.carriage::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+}
+
+.carriage::before {
+    left: 10px;
+}
+
+.carriage::after {
+    right: 10px;
+}
+
+.carriage-name {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
